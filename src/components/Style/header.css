@@ -1,9 +1,11 @@
 .header{
     background-color: black;
     color: white;
-    height: 8%;
+    margin: 20px;
     position: fixed;
+    display: flex;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 .logo {

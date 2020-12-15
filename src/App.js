@@ -16,8 +16,9 @@ const Dodecahedron = ( {...props}) => {
 }
 
 const Content = () => {
+
  const ref = useRef()
- useFrame(() => (ref.current.rotation.x = ref.current.rotation.y += 0.01))
+ useFrame(() => (ref.current.rotation.x = ref.current.rotation.y += 0.003))
  return(
     <group ref={ref}>
       <Dodecahedron position={[0,0,0]}/>
@@ -31,11 +32,11 @@ function App() {
     <>
       <Header/>
       <Canvas
-      camera={{position:[0,0,0,0]}}
+      camera={{position:[0,0,7], fov: 40}}
       >
         <pointLight color='green'/>
-        <pointLight position={[10, 10, -10]} color='orange' />
-        <pointLight position={[10, 10, -10]} color='lightblue' />
+        <pointLight position={[10, 10, -10]} color='white' />
+        <pointLight position={[-10, 10, 10]} color='white' />
         <Content/>
       </Canvas>
     </>
