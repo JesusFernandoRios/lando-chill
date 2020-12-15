@@ -5,7 +5,7 @@
     position: fixed;
     display: flex;
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    width: 90%;
 }
 
 .logo {
@@ -20,4 +20,22 @@
 
 .menu__item {
     padding: 20px;
+}
+
+@media (max-width: 700px){
+    .header {
+        display: inline;
+    }
+    .logo {
+        justify-content: center;
+    }
+    .menu__item {
+        padding:5px
+    }
+    .nav__items{
+        display: flex;
+        margin-left: 0;
+        justify-content: center;
+    }
+
 }
