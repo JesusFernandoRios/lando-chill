@@ -7,7 +7,7 @@ export default function Header() {
         <header className="header">
 
             <div className="logo">
-                <h2>Lando Chill</h2>
+                <h1>Lando Chill</h1>
             </div>
             <div className="nav__items">
                 <h3 className="menu__item">Button</h3>
