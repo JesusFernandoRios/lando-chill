@@ -1,7 +1,6 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Header from './components/Header';
 import { Canvas, useFrame, useThree } from 'react-three-fiber';
-import { OrbitControls } from '@react-three/drei'
 import  { useDrag } from 'react-use-gesture'
 import './components/Style/app.css'
 
@@ -13,7 +12,8 @@ const Dodecahedron = () => {
   const aspect = size.width / viewport.width;
 
   useFrame(() => {
-    ref.current.rotation.z = ref.current.rotationx += 0.003
+    ref.current.rotation.z += 0.003
+    ref.current.rotation.x += 0.003
   })
 
   const bind = useDrag(({ offset: [x,y] }) => {
@@ -23,10 +23,8 @@ const Dodecahedron = () => {
 
   return(
     <mesh position={position} {...bind()} ref={ref}>
-      <Suspense fallback={null}>
-        <dodecahedronBufferGeometry />
-        <meshStandardMaterial roughness={0.75} emissive="gray"/>
-      </Suspense>
+      <dodecahedronBufferGeometry attach="geometry"/>
+      <meshLambertMaterial attach="material" emissive="gray"/>
     </mesh>
   )
 }
@@ -36,12 +34,8 @@ function App() {
   return (
     <>
       <Header/>
-      <Canvas
-      camera={{position:[0,0,7.5]}}
-      >
-        <pointLight color='white'/>
-        <pointLight position={[10, 10, -10]} color='white' />
-        <pointLight position={[-10, -10, 10]} color='white' />
+      <Canvas>
+        <spotLight intensity={1.2} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
         <Dodecahedron/>
       </Canvas>
     </>
