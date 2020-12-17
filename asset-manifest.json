@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/lando-chill/static/css/main.7e66ecb7.chunk.css",
-    "main.js": "/lando-chill/static/js/main.4eee6e22.chunk.js",
-    "main.js.map": "/lando-chill/static/js/main.4eee6e22.chunk.js.map",
+    "main.css": "/lando-chill/static/css/main.8c5e8189.chunk.css",
+    "main.js": "/lando-chill/static/js/main.51746d3f.chunk.js",
+    "main.js.map": "/lando-chill/static/js/main.51746d3f.chunk.js.map",
     "runtime-main.js": "/lando-chill/static/js/runtime-main.ae64e706.js",
     "runtime-main.js.map": "/lando-chill/static/js/runtime-main.ae64e706.js.map",
-    "static/js/2.69cf3668.chunk.js": "/lando-chill/static/js/2.69cf3668.chunk.js",
-    "static/js/2.69cf3668.chunk.js.map": "/lando-chill/static/js/2.69cf3668.chunk.js.map",
+    "static/js/2.64728b0a.chunk.js": "/lando-chill/static/js/2.64728b0a.chunk.js",
+    "static/js/2.64728b0a.chunk.js.map": "/lando-chill/static/js/2.64728b0a.chunk.js.map",
     "index.html": "/lando-chill/index.html",
-    "static/css/main.7e66ecb7.chunk.css.map": "/lando-chill/static/css/main.7e66ecb7.chunk.css.map",
-    "static/js/2.69cf3668.chunk.js.LICENSE.txt": "/lando-chill/static/js/2.69cf3668.chunk.js.LICENSE.txt"
+    "static/css/main.8c5e8189.chunk.css.map": "/lando-chill/static/css/main.8c5e8189.chunk.css.map",
+    "static/js/2.64728b0a.chunk.js.LICENSE.txt": "/lando-chill/static/js/2.64728b0a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.ae64e706.js",
-    "static/js/2.69cf3668.chunk.js",
-    "static/css/main.7e66ecb7.chunk.css",
-    "static/js/main.4eee6e22.chunk.js"
+    "static/js/2.64728b0a.chunk.js",
+    "static/css/main.8c5e8189.chunk.css",
+    "static/js/main.51746d3f.chunk.js"
   ]
 }
