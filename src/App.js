@@ -1,31 +1,37 @@
-import React, { useRef, useState } from 'react'
+import React, { Suspense, useRef, useState } from 'react'
 import Header from './components/Header';
 import { Canvas, useFrame, useThree } from 'react-three-fiber';
-import  { useDrag } from 'react-use-gesture'
+import { useSpring, a} from '@react-spring/three'
+import  { useGesture } from 'react-use-gesture'
 import './components/Style/app.css'
 
 
 const Dodecahedron = () => {
   const ref = useRef();
-  const [position, setPosition] = useState([0,0,0])
   const { size, viewport } = useThree();
   const aspect = size.width / viewport.width;
+  const [{ rotation, ...rest }, set] = useSpring(() => ({
+    scale: [1, 1, 1],
+    position: [0, 0, 0],
+    rotation: [0, 0, 0],
+    config: { mass: 3, friction: 40, tension: 800 }
+  }))
 
-  useFrame(() => {
-    ref.current.rotation.z += 0.003
-    ref.current.rotation.x += 0.003
+  const bind = useGesture({
+    onDrag: ({ offset: [x, y] }) => {
+
+      set({ position: [x / aspect, -y / aspect, 0], rotation: [y / aspect, x / aspect, 0] })
+    },
+    onHover: ({ hovering }) => set({ scale: hovering ? [1.2, 1.2, 1.2] : [1, 1, 1] })
   })
 
-  const bind = useDrag(({ offset: [x,y] }) => {
-    const [,,z] = position;
-    setPosition([x / aspect, -y / aspect, z]);
-  }, { pointerEvents: true})
-
   return(
-    <mesh position={position} {...bind()} ref={ref}>
+    
+    <a.mesh rotation={rotation} {...rest} {...bind()}>
       <dodecahedronBufferGeometry attach="geometry"/>
       <meshLambertMaterial attach="material" emissive="gray"/>
-    </mesh>
+    </a.mesh>
+      
   )
 }
 
@@ -34,7 +40,9 @@ function App() {
   return (
     <>
       <Header/>
-      <Canvas>
+      <Canvas
+      camera={{position:[0,0,7.5]}}
+      >
         <spotLight intensity={1.2} position={[30, 30, 50]} angle={0.2} penumbra={1} castShadow />
         <Dodecahedron/>
       </Canvas>
