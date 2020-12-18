@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/lando-chill/static/css/main.2c30cb24.chunk.css",
-    "main.js": "/lando-chill/static/js/main.dff26f75.chunk.js",
-    "main.js.map": "/lando-chill/static/js/main.dff26f75.chunk.js.map",
+    "main.js": "/lando-chill/static/js/main.b2db0c1c.chunk.js",
+    "main.js.map": "/lando-chill/static/js/main.b2db0c1c.chunk.js.map",
     "runtime-main.js": "/lando-chill/static/js/runtime-main.ae64e706.js",
     "runtime-main.js.map": "/lando-chill/static/js/runtime-main.ae64e706.js.map",
     "static/js/2.8a85a622.chunk.js": "/lando-chill/static/js/2.8a85a622.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.ae64e706.js",
     "static/js/2.8a85a622.chunk.js",
     "static/css/main.2c30cb24.chunk.css",
-    "static/js/main.dff26f75.chunk.js"
+    "static/js/main.b2db0c1c.chunk.js"
   ]
 }
