@@ -1,13 +1,12 @@
-import React, { Suspense, useRef, useState } from 'react'
+import React from 'react'
 import Header from './components/Header';
-import { Canvas, useFrame, useThree } from 'react-three-fiber';
+import { Canvas, useThree } from 'react-three-fiber';
 import { useSpring, a} from '@react-spring/three'
 import  { useGesture } from 'react-use-gesture'
 import './components/Style/app.css'
 
 
 const Dodecahedron = () => {
-  const ref = useRef();
   const { size, viewport } = useThree();
   const aspect = size.width / viewport.width;
   const [{ rotation, ...rest }, set] = useSpring(() => ({
